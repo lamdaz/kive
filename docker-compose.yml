@@ -1,0 +1,12 @@
+services:
+  lobechat:
+    build: .
+    container_name: lobechat-ragib
+    ports:
+      - "3210:3210"
+    environment:
+      PORT: "3210"
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_PROXY_URL: ${OPENAI_PROXY_URL:-https://api.ragib.tech/v1}
+      ACCESS_CODE: ${ACCESS_CODE}
+      OPENAI_MODEL_LIST: ${OPENAI_MODEL_LIST}
